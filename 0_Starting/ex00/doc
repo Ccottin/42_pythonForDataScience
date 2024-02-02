@@ -1,0 +1,1 @@
+un tuple est immutable, contrairement aux listes. Les elements dans un set sont immuables et uniques ; mais le set lui-meme peut être modifié. On ne peut pas y stocker de listes ou de dictionnaires. Dict ressemble bcp à un map de c++ ; il s'initialise avec {key: value} et peut se mettre à jour avec update(key = value) 

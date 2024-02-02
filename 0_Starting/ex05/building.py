@@ -57,8 +57,6 @@ def main():
     except Exception:
         print("Error")
         return (1)
-    else:
-        return (1)
 
 
 if __name__ == "__main__":
