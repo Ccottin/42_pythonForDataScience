@@ -24,15 +24,15 @@ def ft_tqdm(lst: range) -> None:
         progress_bar = ""
         bar_ratio = ratio / 100 * max_pgr_bar
         i = 0
-        while (i <= bar_ratio + 1):
+        while (i < bar_ratio + 1):
             progress_bar = progress_bar + "█"
             i = i + 1
         while (i > bar_ratio and i < max_pgr_bar):
             progress_bar = progress_bar + " "
             i = i + 1
-        print(str(ratio + 1) + "%|" + progress_bar + "|", str(count + 1)
+        print(f"{ratio + 1:<3}%|" + progress_bar + "|", str(count + 1)
               + "/" + str(upper_range), end="\r")
         yield (count)
 
-    print(str(ratio + 1) + "%|" + progress_bar + "|", str(count + 1)
-          + "/" + str(upper_range), end="\r")
+        print(f"{ratio + 1:<3}%|" + progress_bar + "|", str(count + 1)
+              + "/" + str(upper_range), end="\r")
