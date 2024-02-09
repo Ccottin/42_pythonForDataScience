@@ -1,0 +1,14 @@
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "Life is meaningless without glitter"
+Homepage = "https://github.com/ccottin/ft_package"
+author = "ccottin"
+Author-email="ccottin@42.fr"
+License="MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
