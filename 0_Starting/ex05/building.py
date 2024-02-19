@@ -7,6 +7,8 @@ def building(line: str):
     Punctuation marks are the one defined in library string, as
     'string.punctuation' shall output."""
 
+    if (line is None or line == ''):
+        return (1)
     digits = 0
     lowercases = 0
     uppercases = 0
@@ -31,23 +33,26 @@ def building(line: str):
     print("The text contains", len(line), "characters:\n", uppercases,
           "upper letters\n", lowercases,  "lower letters\n", punctuations,
           "punctuation marks\n", whitespaces, "spaces\n", digits, "digits")
+    return (0)
 
 
 def main():
     """The main function is used to check potentials issues, then launch
         appropriate function"""
 
-    line: str
+    line: str = ''
+    mark = 1
 
     try:
-        assert len(sys.argv) < 3, "too many arguments"
-        if (len(sys.argv) < 2 or sys.argv[1] is None):
-            print("What is the text to count?")
-            for line in sys.stdin:
-                break
-        else:
-            line = sys.argv[1]
-        building(line)
+        while (mark):
+            assert len(sys.argv) < 3, "too many arguments"
+            if (len(sys.argv) < 2 or sys.argv[1] is None):
+                print("What is the text to count?")
+                for line in sys.stdin:
+                    break
+            else:
+                line = sys.argv[1]
+            mark = building(line)
         return (0)
 
     except AssertionError as e:

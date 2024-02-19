@@ -1,4 +1,3 @@
-import sys
 from ft_filter import ft_filter
 
 
@@ -7,7 +6,7 @@ def main():
     test2 = {'0': "coucou", "1": "slt", 2: "o"}
     test3 = list()
     test4 = "une chaine de caracreteiu-(u(-_èu-(-4y(-564e"
-    test5 = [1,2,3,4,5,6]
+    test5 = [1, 2, 3, 4, 5, 6]
     for i in filter(None, test1):
         print(i)
     print("=")

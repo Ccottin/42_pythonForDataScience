@@ -1,6 +1,3 @@
-import sys
-sys.path.insert(0, "/home/mongropython/.local/lib/python3.12/site-packages")
-
 from time import sleep
 from tqdm import tqdm
 from Loading import ft_tqdm

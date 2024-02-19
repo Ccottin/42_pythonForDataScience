@@ -2,13 +2,16 @@
 name = "ft_package"
 version = "0.0.1"
 description = "Life is meaningless without glitter"
-Homepage = "https://github.com/ccottin/ft_package"
-author = "ccottin"
-Author-email="ccottin@42.fr"
+authors = [
+	{name = "ccottin", email="ccottin@42.fr"}
+]
 License="MIT"
 readme = "README.md"
 requires-python = ">=3.10"
 
+[project.urls]
+Homepage = "https://github.com/Ccottin/42_pythonForDataScience/tree/main/0_Starting/ex09"
+Documentation = "https://packaging.python.org/en/latest/tutorials/packaging-projects/"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

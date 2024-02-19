@@ -36,8 +36,8 @@ def main():
     The all() function returns True if all items in an iterable are true,
     otherwise it returns False."""
     try:
-        assert (len(sys.argv) == 2 and type(sys.argv[1]) == str and
-                all(x.isalnum() or x.isspace() for x in sys.argv[1])
+        assert (len(sys.argv) == 2 and isinstance(sys.argv[1], str)
+                and all(x.isalnum() or x.isspace() for x in sys.argv[1])
                 ), "the arguments are bad"
         morse_encoding(sys.argv[1])
     except AssertionError as e:

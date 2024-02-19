@@ -21,7 +21,9 @@ def ft_filter(function, iterable):
     Return an iterator yielding those items of iterable for which
     function(item) is true. If function is None, return the items
     that are true.
-    This is ft_filter; a home-made version"""
+    This is ft_filter; a home-made version
+    List comprehension offers a shorter syntax when you want to create a new
+    list based on the values of an existing list."""
 
     if (function is None):
         return (iterator([elem for elem in iterable if elem]))
