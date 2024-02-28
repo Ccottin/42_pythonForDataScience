@@ -1,14 +1,19 @@
-import numpy as np
+from numpy import array
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """Numpy provides a slice tool, used as [start:end] to resize an
+    array."""
     try:
-        family = np.array(family)
+        family = array(family)
         print("My shape is :", family.shape)
-        
+        family = family[start:end]
+        print("My new shape is :", family.shape)
+        return (family)
+
     except AssertionError as e:
-        print("AssertionError: " + e.args[0] if e.args else '')
+        print("AssertionError: ", str(e))
         return (None)
     except Exception as e:
-        print("Error: " + e.args[0] if e.args else '')
+        print("Error: " + str(e))
         return (None)

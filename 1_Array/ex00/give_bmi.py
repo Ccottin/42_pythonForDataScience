@@ -23,10 +23,10 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
         return (list(bmi))
 
     except AssertionError as e:
-        print("Assertion Error: " + e.args[0] if e.args else "")
+        print("Assertion Error: ", str(e))
         return (1)
     except Exception as e:
-        print("Error" + e.args[0] if e.args else '')
+        print("Error" + e.args[0], str(e))
         return (1)
 
 
@@ -47,8 +47,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         return (list(bmi > limit))
 
     except AssertionError as e:
-        print("Assertion Error: " + e.args[0] if e.args else "")
+        print("Assertion Error: ", str(e))
         return (1)
     except Exception as e:
-        print("Error" + e.args[0] if e.args else '')
+        print("Error", str(e))
         return (1)
