@@ -3,7 +3,9 @@ from numpy import array
 import numpy as np
 
 # To extract a channel and isolate it ; we can use array[:,:,x] where
-# x is the index of the channel, then patch it back 
+# x is the index of the channel, then patch it back
+
+
 def ft_invert(array) -> array:
     """Inverts the colors of the image received."""
     try:

@@ -28,6 +28,10 @@ def main():
 
     try:
         image_array = ft_load("animal.jpeg")
+        image_array = image_array[100:500, 450:850, 0:1]
+        print('The shape of image is:', image_array.shape, "or",
+              np.squeeze(image_array).shape)
+        print(image_array)
         image_array = np.squeeze(image_array)
         image_array = ft_rotate(image_array)
         print("new shape after transpose:", image_array.shape)

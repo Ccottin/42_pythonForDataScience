@@ -10,6 +10,7 @@ def main():
     it is normal to get alot of text when doing SIGINT :)"""
     try:
         image_array = ft_load("animal.jpeg")
+        assert image_array is not None, "No image provided"
         image_array = image_array[100:500, 450:850, 0:1]
         print("New shape after slicing:", image_array.shape, "or",
               np.squeeze(image_array).shape)
@@ -19,6 +20,7 @@ def main():
 
     except Exception as e:
         print("Error:", str(e))
+        return (None)
 
 
 if __name__ == "__main__":

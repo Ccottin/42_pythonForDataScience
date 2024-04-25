@@ -24,10 +24,10 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
 
     except AssertionError as e:
         print("Assertion Error: ", str(e))
-        return (1)
+        return (None)
     except Exception as e:
         print("Error" + e.args[0], str(e))
-        return (1)
+        return (None)
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -35,7 +35,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     a limit as parameters. It returns a list of booleans
     (True if above the limit)."""
 
-    try:  
+    try:
         assert isinstance(bmi, list) and isinstance(limit, int), \
                 "Unvalid data type"
         assert bmi is not None and all(isinstance(x, float) or
@@ -48,7 +48,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
     except AssertionError as e:
         print("Assertion Error: ", str(e))
-        return (1)
+        return (None)
     except Exception as e:
         print("Error", str(e))
-        return (1)
+        return (None)

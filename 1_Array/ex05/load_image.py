@@ -1,5 +1,4 @@
 from matplotlib import image as img
-from matplotlib import pyplot as plt
 from numpy import array
 
 # To print image, paste

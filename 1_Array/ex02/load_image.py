@@ -1,11 +1,12 @@
 from matplotlib import image as img
-from matplotlib import pyplot as plt
 from numpy import array
 
 # To print image, paste
 # plt.imshow(image_array)
 # plt.show()
 # after its loaded into image_array
+# also import this library
+# import matplotlib.pyplot as plt
 
 
 def ft_load(path: str) -> array:
