@@ -12,17 +12,28 @@ def main():
 
         countries = ['France', 'Mali']
         data = data[data.country.isin(countries)]
-        data = data.iloc[:, :data.columns.get_loc('2050')]
+        data = data.iloc[:, :data.columns.get_loc('2051')]
+        data = data.set_index('country') 
+
+        print(data)
+        data = data.replace('k', '000')
+        data = data.map(lambda x: float(x.replace('M', '')) * 1e6
+                        if 'M' in x else float(x))
+
         print(data)
 
-        data.T.plot(kind='line',
-                         title='France Life expectancy Projections',
-                         ylabel='life expectancy', xlabel='year')
+        data = data.T
+
+        data.plot(kind='line',
+                 title='France Life expectancy Projections',
+                 ylabel='population', xlabel='year')
         plt.show()
         plt.close()
 
     except Exception as e:
         print("Error:", str(e))
+    except AssertionError as e:
+        print("Assertion Error: ", str(e))
 
 
 if __name__ == "__main__":
