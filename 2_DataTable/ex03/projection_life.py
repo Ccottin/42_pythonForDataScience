@@ -1,5 +1,7 @@
 from load_csv import load
 import matplotlib.pyplot as plt
+import matplotlib.axis as axis
+import matplotlib.ticker as ticker
 import pandas as pd
 
 def main():
@@ -12,10 +14,20 @@ def main():
 
         ley = ley['1900']
         gdp = gdp['1900']
-        display = pd.concat([ley, gdp])
+        
+        plt.semilogx(gdp, ley, "ob")
+        plt.title('1900')
+        plt.ylabel('Life Expectancy')
+        plt.xlabel('Gross domestic product')
 
-        print(ley, gdp)
+# finir ca demain
+        axis.Axis.set_major_locator(ticker.FixedLocator([0, 10]))
+      #  axis.Axis.set_ticklabels(['300', '1k', '10k'])
+        plt.show()
+        plt.close()
 
+    except AssertionError as e:
+        print("Assertion Error: ", str(e))
     except Exception as e:
         print("Error:", str(e))
 

@@ -13,10 +13,9 @@ def main():
         countries = ['France', 'Mali']
         data = data[data.country.isin(countries)]
         data = data.iloc[:, :data.columns.get_loc('2051')]
-        data = data.set_index('country') 
+        data = data.set_index('country')
 
         print(data)
-        data = data.replace('k', '000')
         data = data.map(lambda x: float(x.replace('M', '')) * 1e6
                         if 'M' in x else float(x))
 
@@ -24,9 +23,16 @@ def main():
 
         data = data.T
 
-        data.plot(kind='line',
-                 title='France Life expectancy Projections',
-                 ylabel='population', xlabel='year')
+        plt.plot(data)
+        plt.legend(['Mali', 'France'], loc=4)
+        plt.title('Population Projection')
+        plt.ylabel('Population')
+        plt.xlabel('Year')
+        plt.xticks(range(0, 2050 - 1800, 40))
+        plt.yticks(range(0, (80 * 10 ** 6), (20 * 10 ** 6)),
+                   ['', '20M', '40M', '60M'])
+        plt.ylim(bottom=1)
+
         plt.show()
         plt.close()
 
