@@ -1,6 +1,6 @@
 from load_csv import load
 import matplotlib.pyplot as plt
-import numpy as np
+
 
 def main():
     """Displays the projection of life expectancy in relation to the gross
