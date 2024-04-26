@@ -15,12 +15,8 @@ def main():
         data = data.iloc[:, :data.columns.get_loc('2051')]
         data = data.set_index('country')
 
-        print(data)
         data = data.map(lambda x: float(x.replace('M', '')) * 1e6
                         if 'M' in x else float(x))
-
-        print(data)
-
         data = data.T
 
         plt.plot(data)
