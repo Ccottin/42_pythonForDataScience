@@ -12,6 +12,8 @@ def main():
 
         ley = ley['1900']
         gdp = gdp['1900']
+        gdp = gdp.map(lambda x: float(x.replace('M', '')) * 1e6
+                      if 'M' in x else float(x))
 
         plt.semilogx(gdp, ley, "ob")
         plt.title('1900')
@@ -27,18 +29,6 @@ def main():
     except Exception as e:
         print("Error:", str(e))
 
-
-#pense a remodifier ton code en fonction
-    def ft_retry(lst):
-    for x in lst:
-        x = str(x)
-        if 'K' in x.upper():
-            x = float(x.upper().replace('K', '')) * 1e3
-        elif 'M' in x.upper():
-            x = float(x.upper().replace('M', '')) * 1e6
-        else:
-            x = float(x)
-    return (lst)
 
 if __name__ == "__main__":
     main()

@@ -2,10 +2,22 @@ import matplotlib.pyplot as plt
 from load_csv import load
 
 
+def ft_convert(x):
+    conv_dict = {"K": 10 ** 3,
+                 "M": 10 ** 6,
+                 "B": 10 ** 9}
+    for i in conv_dict:
+        if i in x:
+            x = str(x)
+            x = float(x.upper().replace(i, '')) * float(conv_dict[i])
+            return (x)
+    return (float(x))
+
+
 def main():
     """This program will display population total and projection
     for France and Mali."""
-
+   
     try:
         data = load("population_total.csv")
         assert data is not None, "No data provided"
@@ -15,9 +27,8 @@ def main():
         data = data.iloc[:, :data.columns.get_loc('2051')]
         data = data.set_index('country')
 
-        data = data.map(lambda x: float(x.replace('M', '')) * 1e6
-                        if 'M' in x else float(x))
         data = data.T
+        data = data.map(lambda x: ft_convert(x))
 
         plt.plot(data)
         plt.legend(['Mali', 'France'], loc=4)
