@@ -1,6 +1,6 @@
 
 # * = unpacking operator returning a tuple(unmutable list) that works for
-# positionals args
+# positionals args (unamed args)
 # ** = same but returns a dict for named args
 
 
@@ -17,6 +17,7 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             total = total + arg
         sorted_args = list(args)
         sorted_args.sort()
+        print("sorted list :", sorted_args)
 
         for key, value in kwargs.items():
             if i == 0:
@@ -28,17 +29,19 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 print("median :", sorted_args[int((i) / 2)])
             elif value == "quartile":
                 quartile = sorted_args[int((i) / 4)]
+                quartile3 = sorted_args[int((i) * 3 / 4)]
 
+                to_print = ['{0:.1f}'.format(float(quartile)),
+                            '{0:.1f}'.format(float(quartile3))]
                 #formatting is wrong here
-                quartile3 = sorted_args[int((i) / 6)]
-                print("quartile :", [float(f'{quartile:.1}'),
-                                     float(f'{quartile3:.1}')])
+                print("quartile :", quartile, quartile3)
+                print("quartile :", '[%s]' % ', '.join(map(str, to_print)))
             elif value == "std":
                 mean = total / i
                 temp = 0
                 for arg in args:
                     temp = temp + ((arg - mean) ** 2)
-                #same shit here, you need to substract 1 to i but we count from 0
+                # same here, you need to substract 1 to i but we count from 0
                 print("std:", (temp / i) ** 0.5)
             elif value == "var":
                 mean = total / i
