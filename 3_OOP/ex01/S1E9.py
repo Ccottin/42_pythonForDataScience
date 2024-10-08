@@ -2,7 +2,8 @@ from abc import ABC, abstractmethod
 
 
 class Character(ABC):
-    """An abstract class to create a character."""
+    """An abstract class to create a character. 'pass' keyword
+        is used to define init method in every children class."""
     @abstractmethod
     def __init__(self, first_name: str, is_alive=True):
         """Initialisation of the class"""

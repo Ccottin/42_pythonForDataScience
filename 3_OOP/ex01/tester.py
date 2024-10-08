@@ -2,10 +2,11 @@ from S1E7 import Baratheon, Lannister
 
 
 def main():
+
     Robert = Baratheon("Robert")
 
     print(Robert)
-
+    print("---")
     print(Robert.__dict__)
     print(Robert.__str__)
     print(Robert.__repr__)
@@ -19,9 +20,10 @@ def main():
     print(Cersei.__str__)
     print(Cersei.is_alive)
     print("---")
-    Jaine = Lannister.create_lannister("Jaine", True)
+    Jaine = Lannister.create_lannister("Jaine", True, 'brown')
     print(f"Name : {Jaine.first_name, type(Jaine).__name__}, \
 Alive : {Jaine.is_alive}")
+    print(Jaine.__dict__)
 
 
 if __name__ == "__main__":
