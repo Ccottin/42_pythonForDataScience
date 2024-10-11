@@ -1,5 +1,5 @@
 # if you want to access a variable from within a nested
-# function; you can use nonlocal (see l.21)
+# function; you can use nonlocal (see l.32)
 
 # Nested or Inner function are used to protect ect.
 # and mostly are a base to decorators
@@ -44,4 +44,3 @@ def outer(x: int | float, function) -> object:
     except Exception as e:
         print("Error: ", e.str())
         return (None)
-
