@@ -1,5 +1,7 @@
 # a nested nested function needs to climb up step by step
 # also this could be practical to protect executions
+# we actually create a decorator : it wraps the defined function
+# with callLimiter
 
 def callLimit(limit: int):
     """This is a wrapper that allows only a certain number of execution"""
@@ -15,7 +17,7 @@ def callLimit(limit: int):
 
                 assert limit > -1
                 if count < limit:
-                    function()
+                    function(*args, **kwds)
                     count = count + 1
                 else:
                     print("Error:", function, "call too many times")
